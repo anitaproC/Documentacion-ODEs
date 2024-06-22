@@ -1,6 +1,6 @@
 # ode/ode.py
 
-""" ###Métodos númericos para resolver ODEs.
+""" ##Métodos númericos para resolver ODEs.
 
 Este módulo permite al usuario resolver ODEs con distintos métodos matemáticos.
 
