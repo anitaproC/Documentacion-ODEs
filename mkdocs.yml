@@ -1,0 +1,11 @@
+site_name: Métodos de resolución de ODEs
+
+theme:
+    name: "material"
+
+plugins:
+    - mkdocstrings
+
+nav:
+    - Introducción: index.md
+    - Documentación: reference.md
