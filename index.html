@@ -200,26 +200,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#tabla-de-contenidos" class="md-nav__link">
+  <a href="#metodo-de-euler" class="md-nav__link">
     <span class="md-ellipsis">
-      Tabla de contenidos:
+      Método de Euler
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Tabla de contenidos:">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#realizado-por" class="md-nav__link">
-    <span class="md-ellipsis">
-      Realizado por:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -278,26 +263,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#tabla-de-contenidos" class="md-nav__link">
+  <a href="#metodo-de-euler" class="md-nav__link">
     <span class="md-ellipsis">
-      Tabla de contenidos:
+      Método de Euler
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Tabla de contenidos:">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#realizado-por" class="md-nav__link">
-    <span class="md-ellipsis">
-      Realizado por:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -317,16 +287,17 @@
 
 
 <h1 id="bienvenid">¡Bienvenid@!</h1>
-<p>Este sitio contiene la documentación para el proyecto
-'ode', el cual fue realizado para la Tarea 4 del curso
-FS-0432: Física Computacional. </p>
-<h2 id="tabla-de-contenidos">Tabla de contenidos:</h2>
-<p>Esta documentación contiene las siguientes partes:</p>
-<ol>
-<li><a href="reference/">¿Cómo Usar?</a></li>
-</ol>
-<h3 id="realizado-por">Realizado por:</h3>
-<p>Anaité Chaves Ramirez</p>
+<p>Este sitio contiene la documentación para implementar diferentes métodos númericos para resolver ODEs. A continuación una breve introducción sobre la matématica detras de estos métodos.  </p>
+<h3 id="metodo-de-euler">Método de Euler</h3>
+<p>El método de Euler, se basa en la expansión de Taylor de la función x(t). Tenemos:</p>
+<p><img alt="expansion de taylor" src="https://quicklatex.com/cache3/6e/ql_97cc5a36e4a55ae689a1e51cd669176e_l3.png" /></p>
+<p>Esto implica que para avanzar en el tiempo la función por un paso <span class="arithmatex"><span class="MathJax_Preview">h</span><script type="math/tex">h</script></span>, el cual suponemos que es lo suficientemente pequeño, basta con utilizar la ecuación</p>
+<p><img alt="hpequeño" src="https://quicklatex.com/cache3/e3/ql_f942e46ae0ef22d93a070b0ee3115ee3_l3.png" /></p>
+<p>El error asociado con la aproximación <strong>está ligado a la cantidad de veces que hagamos la aproximación</strong>, es decir, al número de pasos en el tiempo que utilicemos en nuestra solución. Lo podemos estimar de la siguiente forma</p>
+<p>\sum\epsilon = \sum_{k=0}^{N-1}\frac{h^2}{2}\left. \frac{d^2x}{dt^2} \right|<em k="0">{x_k, t_k} = \frac{h}{2}\sum</em>\
+\approx \frac{h}2\int_a^b\frac{df}{dt}d t = \frac{h}{2}\left[f_b - f_a\right]}^{N-1}h\left.\frac{df}{dt}\right|_{x_k, t_k</p>
+<p>Realizado por:
+Anaité Chaves Ramirez</p>
 
 
 
@@ -377,6 +348,10 @@ FS-0432: Física Computacional. </p>
     
     
       <script src="assets/javascripts/bundle.ad660dcc.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.2/es5/tex-mml-chtml.js"></script>
       
     
   </body>
