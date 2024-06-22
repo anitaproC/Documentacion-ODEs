@@ -9,25 +9,26 @@ El módulo contiene las siguientes funciones:
     - Euler: Utiliza el Método de Euler para resolver la ODE.
     - RK2: Utiliza el Método de RK2 para resolver la ODE.
     - RK4: Utiliza el Método de RK4 para resolver la ODE.
+
 """
 
+def Euler(f,xi,ti,tf,N):
 
     """Utiliza el Método de Euler para resolver la ODE.
 
-    Ejemplos:
+    Examples:
 
-    Argumentos:
+    Args:
         f (función): Función de la ecuación a resolver.
-        xi (entero): Valor inicial para la variable dependiente.
-        ti (entero): Valor inicial para la variable independiente.
-        tf (entero): Valor final para la variable independiente.
-        N (entero): Número de particiones entre el rango de variables independientes.
+        xi (float): Valor inicial para la variable dependiente.
+        ti (float): Valor inicial para la variable independiente.
+        tf (float): Valor final para la variable independiente.
+        N (int): Número de particiones entre el rango de variables independientes.
 
-    Retorna:
-        Dos vectores, uno para las variables dependientes 't' y otro para las variables independientes 'x'
-    """
-
-def Euler(f,xi,ti,tf,N):
+    Returns:
+        x (arreglo): un vector para la variable dependiente 'x'
+        t (arreglo): un vector para la variable dependiente 't'
+"""
     t = np.linspace(ti,tf,N)
     x = np.zeros(t.size)
     x[0] = xi
@@ -36,23 +37,23 @@ def Euler(f,xi,ti,tf,N):
         x[i+1] = x[i] + h*f(x[i],t[i])
     return t,x
 
-
+def RK2(f,xi,ti,tf,N):
     """Utiliza el Método de RK2 para resolver la ODE.
 
-    Ejemplos:
+    Examples:
 
-    Argumentos:
+    Args:
         f (función): Función de la ecuación a resolver.
-        xi (entero): Valor inicial para la variable dependiente.
-        ti (entero): Valor inicial para la variable independiente.
-        tf (entero): Valor final para la variable independiente.
-        N (entero): Número de particiones entre el rango de variables independientes.
+        xi (float): Valor inicial para la variable dependiente.
+        ti (float): Valor inicial para la variable independiente.
+        tf (float): Valor final para la variable independiente.
+        N (int): Número de particiones entre el rango de variables independientes.
 
-    Retorna:
-        Dos vectores, uno para las variables dependientes 't' y otro para las variables independientes 'x'
-    """
+    Returns:
+        x (arreglo): un vector para la variable dependiente 'x'
+        t (arreglo): un vector para la variable dependiente 't'
+"""
 
-def RK2(f,xi,ti,tf,N):
     t = np.linspace(ti,tf,N)
     x = np.zeros(t.size)
     x[0] = xi
@@ -65,22 +66,24 @@ def RK2(f,xi,ti,tf,N):
     return x,t
 
 
+def RK4(f,xi,ti,tf,N):
+
     """Utiliza el Método de RK4 para resolver la ODE.
 
-    Ejemplos:
+    Examples:
 
-    Argumentos:
+    Args:
         f (función): Función de la ecuación a resolver.
         xi (entero): Valor inicial para la variable dependiente.
         ti (entero): Valor inicial para la variable independiente.
         tf (entero): Valor final para la variable independiente.
         N (entero): Número de particiones entre el rango de variables independientes.
 
-    Retorna:
-        Dos vectores, uno para las variables dependientes 't' y otro para las variables independientes 'x'
-    """
+    Returns:
+        x (arreglo): un vector para la variable dependiente 'x'
+        t (arreglo): un vector para la variable dependiente 't'
+"""
 
-def RK4(f,xi,ti,tf,N):
     t = np.linspace(ti,tf,N)
     x = np.zeros(t.size)
     x[0] = xi
