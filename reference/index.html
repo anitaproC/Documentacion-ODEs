@@ -381,6 +381,8 @@
 - RK4: Utiliza el Método de RK4 para resolver la ODE.
 </code></pre></div>
 
+<p>Para resolver las ODEs con los diferentes métodos se utiliza un mismo principio: guardar la variable dependiente e independiente en un arreglo cada una, por lo que este es el resultado. El arreglo que contiene la variable independiente se define primero a través de las condiciones iniciales, finales y el número de particiones. El arreglo que contiene la varibale dependiente se completa al evaluar la ecuación correspondiente a cada método (definidas en la introducción). Esto facilita la gráficación de la función si se desea hacer.</p>
+
 
 
   <div class="doc doc-children">
@@ -545,9 +547,7 @@
 
             <details class="quote">
               <summary>Source code in <code>ode/ode.py</code></summary>
-              <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
+              <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">18</span>
 <span class="normal">19</span>
 <span class="normal">20</span>
 <span class="normal">21</span>
@@ -585,7 +585,9 @@
 <span class="normal">53</span>
 <span class="normal">54</span>
 <span class="normal">55</span>
-<span class="normal">56</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">Euler</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">xi</span><span class="p">,</span><span class="n">ti</span><span class="p">,</span><span class="n">tf</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">Euler</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">xi</span><span class="p">,</span><span class="n">ti</span><span class="p">,</span><span class="n">tf</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
 
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Utiliza el Método de Euler para resolver la ODE.</span>
 
@@ -784,9 +786,7 @@
 
             <details class="quote">
               <summary>Source code in <code>ode/ode.py</code></summary>
-              <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 59</span>
-<span class="normal"> 60</span>
-<span class="normal"> 61</span>
+              <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 61</span>
 <span class="normal"> 62</span>
 <span class="normal"> 63</span>
 <span class="normal"> 64</span>
@@ -825,7 +825,9 @@
 <span class="normal"> 97</span>
 <span class="normal"> 98</span>
 <span class="normal"> 99</span>
-<span class="normal">100</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">RK2</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">xi</span><span class="p">,</span><span class="n">ti</span><span class="p">,</span><span class="n">tf</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">RK2</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">xi</span><span class="p">,</span><span class="n">ti</span><span class="p">,</span><span class="n">tf</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Utiliza el Método de RK2 para resolver la ODE.</span>
 
 <span class="sd">    Args:</span>
@@ -995,9 +997,7 @@
 
             <details class="quote">
               <summary>Source code in <code>ode/ode.py</code></summary>
-              <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">103</span>
-<span class="normal">104</span>
-<span class="normal">105</span>
+              <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">105</span>
 <span class="normal">106</span>
 <span class="normal">107</span>
 <span class="normal">108</span>
@@ -1039,7 +1039,9 @@
 <span class="normal">144</span>
 <span class="normal">145</span>
 <span class="normal">146</span>
-<span class="normal">147</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">RK4</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">xi</span><span class="p">,</span><span class="n">ti</span><span class="p">,</span><span class="n">tf</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">RK4</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">xi</span><span class="p">,</span><span class="n">ti</span><span class="p">,</span><span class="n">tf</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
 
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Utiliza el Método de RK4 para resolver la ODE.</span>
 
