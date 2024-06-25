@@ -10,6 +10,8 @@ El módulo contiene las siguientes funciones:
     - RK2: Utiliza el Método de RK2 para resolver la ODE.
     - RK4: Utiliza el Método de RK4 para resolver la ODE.
 
+Para resolver las ODEs con los diferentes métodos se utiliza un mismo principio: guardar la variable dependiente e independiente en un arreglo cada una, por lo que este es el resultado. El arreglo que contiene la variable independiente se define primero a través de las condiciones iniciales, finales y el número de particiones. El arreglo que contiene la varibale dependiente se completa al evaluar la ecuación correspondiente a cada método (definidas en la introducción). Esto facilita la gráficación de la función si se desea hacer.
+
 """
 
 
